@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AliSalmeh_ProjectWeek5.TV
+namespace AliSalmeh_ProjectWeek5_TVChannel
 {
     class Program
     {
