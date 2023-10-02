@@ -6,29 +6,32 @@ namespace AliSalmeh_ProjectWeek5_TVChannel
     {
         static void Main(string[] args)
         {
-            int i = 0;
-            bool nextChannel = false;
+            int channel = 0;
+            bool isLoved = false;
+            string userAnswer;
+
             do
             {
-                Console.Clear();
-                Console.WriteLine($"**Channel {++i}**");
-                Console.WriteLine("Do you like this Channel? (yes/no)");
-                string userAns = Console.ReadLine().ToLower();
+                PrintChannelInfo(++channel);
+                userAnswer = GetUserInput();
+                isLoved = userAnswer == "yes";
 
-                nextChannel = userAns == "yes" ? true : false;
+            } while (!isLoved);
 
-            } while (nextChannel == false);
-
-            Console.WriteLine($"Enjoy watching channel {i} ");
+            Console.WriteLine($"Enjoy watching channel {channel} ");
             Console.WriteLine("^__^");
+        }
 
-            /* string userAnswer = null;
-            int channel = 0;
-            while (userAnswer != "yes")
-            {
-                Console.WriteLine($"DO you love channel {++channel}?");
-                userAnswer = Console.ReadLine();
-            } */
+        public static string GetUserInput()
+        {
+            return Console.ReadLine().ToLower();
+        }
+
+        public static void PrintChannelInfo(int channelNumber)
+        {
+            Console.Clear();
+            Console.WriteLine($"**Channel {channelNumber}**");
+            Console.WriteLine("Do you love this channel? (yes/no)");
         }
     }
 }
